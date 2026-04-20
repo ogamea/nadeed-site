@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقديم مخطوطة — نضيد | NADEED</title>
+<meta name="description" content="قدّم مخطوطتك لنضيد — دار الأدب والفكر والمعرفة. نقرأ كل مخطوطة بعناية تامة.">
+<meta name="author" content="نضيد — دار الأدب والفكر والمعرفة">
+<link rel="canonical" href="https://nadeed.pub/submit"><link rel="stylesheet" href="nadeed-fonts.css">
+<link rel="stylesheet" href="nadeed-shared.css">
+
+<style>
+/* ══ PAGE-SPECIFIC: SUBMIT ══ */
+
+.page-header {
+  background: var(--noir);
+  padding: calc(var(--nav-h) + 4rem) 0 4rem;
+  border-bottom: 2px solid var(--rouge);
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(237,228,211,0.006) 3px, rgba(237,228,211,0.006) 4px
+  );
+  pointer-events: none;
+}
+.page-title {
+  font-family: var(--font-ar-display);
+  font-size: clamp(38px, 6vw, 64px);
+  color: var(--ivoire);
+  direction: rtl;
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+.page-sub {
+  font-family: var(--font-ar-body);
+  font-size: 16px;
+  color: var(--ivoire-fonce);
+  direction: rtl;
+  opacity: 0.55;
+  max-width: 55ch;
+  line-height: 1.8;
+  position: relative;
+}
+
+/* Layout */
+.submit-main {
+  background: var(--ivoire-bg);
+  padding: 5rem 0 7rem;
+}
+.submit-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Guidelines */
+.g-heading {
+  font-family: var(--font-ar-display);
+  font-size: 22px;
+  color: var(--noir-doux);
+  direction: rtl;
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
+}
+.g-body {
+  font-family: var(--font-ar-body);
+  font-size: 14.5px;
+  color: var(--gris-encre);
+  direction: rtl;
+  line-height: 1.95;
+  margin-bottom: 1.5rem;
+}
+.g-sub {
+  font-family: var(--font-ar-display);
+  font-size: 16px;
+  color: var(--noir-doux);
+  direction: rtl;
+  margin-bottom: 0.85rem;
+  margin-top: 1.75rem;
+}
+.g-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+.g-list li {
+  font-family: var(--font-ar-body);
+  font-size: 14px;
+  color: var(--gris-encre);
+  direction: rtl;
+  padding-right: 1.25rem;
+  position: relative;
+  line-height: 1.8;
+}
+.g-list li::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 0.78em;
+  width: 5px; height: 1.5px;
+  background: var(--rouge);
+}
+.g-note {
+  padding: 1.1rem 1.4rem;
+  background: rgba(26,22,18,0.04);
+  border-right: 2px solid var(--rouge);
+  font-family: var(--font-ar-body);
+  font-size: 13px;
+  color: var(--gris-encre);
+  direction: rtl;
+  line-height: 1.85;
+  margin-top: 1.5rem;
+}
+.g-direct-contact {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 0.5px solid var(--ivoire-border);
+  background: var(--ivoire-card);
+}
+.g-direct-contact p {
+  font-family: var(--font-ar-body);
+  font-size: 13.5px;
+  color: var(--gris-encre);
+  direction: rtl;
+  line-height: 1.85;
+}
+.g-direct-contact a {
+  font-family: var(--font-la-body);
+  color: var(--rouge);
+  direction: ltr;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 0.4rem;
+  word-break: break-all;
+}
+
+/* Form section heading */
+.form-section-title {
+  font-family: var(--font-ar-display);
+  font-size: 19px;
+  color: var(--noir-doux);
+  direction: rtl;
+  margin-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid var(--ivoire-border);
+}
+
+/* Horizontal 2-col within form */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* The honest not-connected notice for this form too */
+.submission-status-notice {
+  padding: 1.25rem 1.5rem;
+  background: rgba(26,22,18,0.04);
+  border: 0.5px solid var(--ivoire-border);
+  border-right: 2px solid var(--gris-pale);
+  margin-top: 1.5rem;
+  direction: rtl;
+}
+.submission-status-notice strong {
+  font-family: var(--font-ar-body);
+  font-size: 13px;
+  color: var(--gris-encre);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.submission-status-notice p {
+  font-family: var(--font-ar-body);
+  font-size: 13px;
+  color: var(--gris-pale);
+  line-height: 1.75;
+}
+.submission-status-notice a {
+  color: var(--rouge);
+  font-family: var(--font-la-body);
+}
+
+/* Footer min */
+.footer-min {
+  background: var(--noir);
+  padding: 2.5rem 0;
+  border-top: 2px solid var(--rouge);
+}
+.footer-min-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-copy {
+  font-family: var(--font-la-body);
+  font-size: 11px;
+  color: var(--ivoire);
+  direction: ltr;
+  opacity: 0.18;
+  letter-spacing: 0.05em;
+}
+.footer-legal { display: flex; gap: 1.5rem; direction: ltr; }
+.footer-legal a {
+  font-family: var(--font-la-body);
+  font-size: 11px;
+  color: var(--ivoire);
+  opacity: 0.18;
+  transition: opacity 0.2s;
+}
+.footer-legal a:hover { opacity: 0.5; }
+
+@media (max-width: 900px) {
+  .submit-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row-2    { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV — identical mark ════ -->
+<nav class="nav" role="navigation" aria-label="القائمة الرئيسية">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="نضيد — الصفحة الرئيسية">
+      <svg width="28" height="32" aria-hidden="true" focusable="false"><use href="nadeed-logo.svg#nadeed-mark-nav"/></svg>
+      <div>
+        <span class="nav-logo-wordmark">نَضِيد</span>
+        <span class="nav-logo-sub">NADEED</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/books"    class="nav-link">الإصدارات</a></li>
+      <li><a href="/authors"  class="nav-link">المؤلفون</a></li>
+      <li><a href="/articles" class="nav-link">المقالات</a></li>
+      <li><a href="/about"    class="nav-link">عن نضيد</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="nav-drawer" id="navDrawer" aria-label="القائمة المتنقلة" aria-hidden="true">
+  <a href="/books"    class="drawer-link">الإصدارات</a>
+  <a href="/authors"  class="drawer-link">المؤلفون</a>
+  <a href="/articles" class="drawer-link">المقالات</a>
+  <a href="/about"    class="drawer-link">عن نضيد</a>
+  <a href="/submit"   class="drawer-link cta">قدّم مخطوطتك ←</a>
+  <p class="drawer-contact ltr">nadeed.pub@outlook.com</p>
+</nav>
+
+
+<header class="page-header">
+  <div class="container">
+    <h1 class="page-title">قدّم مخطوطتك</h1>
+    <p class="page-sub">
+      نقرأ كل مخطوطة بعناية تامة. البريد الرسمي لاستقبال التقديمات:
+      <a href="mailto:nadeed.pub@outlook.com" style="color:var(--rouge);font-family:var(--font-la-body);direction:ltr;display:inline-block;">nadeed.pub@outlook.com</a>
+    </p>
+  </div>
+</header>
+
+<main class="submit-main">
+<div class="container">
+<div class="submit-layout">
+
+  <!-- ════ GUIDELINES ════ -->
+  <aside aria-label="إرشادات التقديم">
+    <h2 class="g-heading">ما الذي نبحث عنه</h2>
+    <p class="g-body">
+      نضيد لا تنشر كل شيء. نبحث عن الصوت الفريد الذي يقول شيئًا لم يُقَل بهذه الطريقة من قبل، والعمل الذي يحترم ذكاء قارئه.
+    </p>
+
+    <h3 class="g-sub">أنواع الأعمال التي نقرأها</h3>
+    <ul class="g-list">
+      <li>الرواية والقصة الطويلة</li>
+      <li>ديوان الشعر (لا تقل عن ٤٠ قصيدة)</li>
+      <li>المقالات الفكرية والأدبية المجمّعة</li>
+      <li>الدراسات النقدية الموجّهة للقارئ العام</li>
+      <li>الأدب التوثيقي والسيرة الأدبية</li>
+    </ul>
+
+    <h3 class="g-sub">ما لا ننشره</h3>
+    <ul class="g-list">
+      <li>الأعمال المنشورة سابقًا في دور نشر أخرى</li>
+      <li>الكتب المدرسية والمناهج التعليمية</li>
+      <li>الكتب الدينية والفقهية</li>
+      <li>أدب الأطفال</li>
+    </ul>
+
+    <div class="g-note">
+      <strong style="display:block;margin-bottom:.4rem;">ملاحظة مهمة:</strong>
+      نتلقى عددًا كبيرًا من المخطوطات. إذا لم نتواصل معك في غضون ٦ أسابيع من الإقرار باستلام التقديم، فهذا يعني أن العمل لا يتناسب مع توجهاتنا الحالية. نحترم وقتك ونقدّر ثقتك.
+    </div>
+
+    <!-- Direct email contact — the only active channel -->
+    <div class="g-direct-contact">
+      <p>
+        يمكنك أيضًا إرسال مخطوطتك مباشرة عبر البريد الإلكتروني مع ملف PDF وملخص مختصر:
+      </p>
+      <a href="mailto:nadeed.pub@outlook.com">nadeed.pub@outlook.com</a>
+    </div>
+  </aside>
+
+  <!-- ════ FORM ════ -->
+  <section aria-labelledby="form-heading">
+    <h2 class="form-section-title" id="form-heading">نموذج التقديم</h2>
+
+    <!-- HONEST STATE: form collects data and validates client-side,
+         but clearly states backend is not yet connected.
+         User is directed to email as the live channel. -->
+    <div class="submission-status-notice" role="note" aria-label="حالة الاتصال">
+      <strong>ملاحظة: النموذج الإلكتروني قيد الإعداد التقني</strong>
+      <p>
+        النموذج أدناه يُجهّز تقديمك ويتحقق من اكتماله، غير أن الإرسال الإلكتروني التلقائي لم يُفعَّل بعد.
+        للتقديم الفوري، أرسل مخطوطتك مباشرة إلى:
+        <a href="mailto:nadeed.pub@outlook.com">nadeed.pub@outlook.com</a>
+      </p>
+    </div>
+
+    <form
+      id="submitForm"
+      novalidate
+      aria-label="نموذج تقديم المخطوطة"
+      style="margin-top:2rem;">
+
+      <!-- Live status region for screen readers -->
+      <div
+        class="form-status"
+        id="formStatus"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        tabindex="-1"></div>
+
+      <!-- Author name -->
+      <div class="form-group">
+        <label for="authorName" class="form-label form-label-req">اسم المؤلف</label>
+        <input
+          type="text"
+          id="authorName"
+          name="authorName"
+          class="form-input"
+          dir="rtl"
+          placeholder="الاسم الكامل"
+          required
+          autocomplete="name"
+          aria-required="true">
+        <span class="form-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Email + Country -->
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="authorEmail" class="form-label form-label-req">البريد الإلكتروني</label>
+          <input
+            type="email"
+            id="authorEmail"
+            name="authorEmail"
+            class="form-input"
+            dir="ltr"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+            aria-required="true">
+          <span class="form-error" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="authorCountry" class="form-label">بلد الإقامة</label>
+          <input
+            type="text"
+            id="authorCountry"
+            name="authorCountry"
+            class="form-input"
+            dir="rtl"
+            placeholder="مثلاً: مصر">
+          <span class="form-error" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <!-- Book title + Genre -->
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="bookTitle" class="form-label form-label-req">عنوان العمل</label>
+          <input
+            type="text"
+            id="bookTitle"
+            name="bookTitle"
+            class="form-input"
+            dir="rtl"
+            placeholder="العنوان الكامل"
+            required
+            aria-required="true">
+          <span class="form-error" role="alert" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="bookGenre" class="form-label form-label-req">نوع العمل</label>
+          <select id="bookGenre" name="bookGenre" class="form-select" required aria-required="true">
+            <option value="" disabled selected>اختر النوع</option>
+            <option value="novel">رواية</option>
+            <option value="short-stories">قصص قصيرة</option>
+            <option value="poetry">شعر</option>
+            <option value="essays">مقالات فكرية وأدبية</option>
+            <option value="criticism">نقد أدبي</option>
+            <option value="biography">سيرة أدبية</option>
+            <option value="other">أخرى</option>
+          </select>
+          <span class="form-error" role="alert" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <!-- Word count -->
+      <div class="form-group">
+        <label for="wordCount" class="form-label form-label-req">عدد الكلمات التقريبي</label>
+        <input
+          type="number"
+          id="wordCount"
+          name="wordCount"
+          class="form-input"
+          dir="ltr"
+          placeholder="مثلاً: 75000"
+          required
+          min="100"
+          aria-required="true"
+          aria-describedby="wordCountHint"
+          style="text-align:left;">
+        <span class="form-hint" id="wordCountHint">للشعر: عدد القصائد. للمقالات: عدد المقالات + تقدير إجمالي الكلمات.</span>
+        <span class="form-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Synopsis -->
+      <div class="form-group">
+        <label for="synopsis" class="form-label form-label-req">ملخص العمل</label>
+        <textarea
+          id="synopsis"
+          name="synopsis"
+          class="form-textarea"
+          dir="rtl"
+          style="min-height:160px;"
+          placeholder="اكتب ملخصًا للعمل في ٢٠٠–٤٠٠ كلمة. أخبرنا عن الموضوع، الشكل، والذي يجعل هذا العمل ضروريًا الآن."
+          required
+          aria-required="true"></textarea>
+        <span class="form-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Author bio -->
+      <div class="form-group">
+        <label for="authorBio" class="form-label form-label-req">نبذة عن المؤلف</label>
+        <textarea
+          id="authorBio"
+          name="authorBio"
+          class="form-textarea"
+          dir="rtl"
+          style="min-height:110px;"
+          placeholder="نبذة مختصرة ١٠٠–٢٠٠ كلمة — خلفيتك، إصداراتك السابقة إن وجدت، وارتباطك بهذا العمل."
+          required
+          aria-required="true"></textarea>
+        <span class="form-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- File upload -->
+      <div class="form-group">
+        <label class="form-label form-label-req">نموذج من العمل</label>
+        <label class="form-file-label" for="manuscriptFile">
+          <input
+            type="file"
+            id="manuscriptFile"
+            name="manuscriptFile"
+            class="form-file-input"
+            accept=".pdf,.doc,.docx"
+            required
+            aria-required="true"
+            aria-describedby="fileHint"
+            data-max-mb="20"
+            data-allowed="pdf,doc,docx">
+          <span>انقر لرفع الفصول الأولى (الحد الأقصى ٥٠ صفحة · ٢٠ ميغابايت)</span>
+        </label>
+        <span class="form-hint" id="fileHint">الصيغ المقبولة: PDF أو Word (.doc, .docx). الحد الأقصى: ٢٠ ميغابايت.</span>
+        <span class="form-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Previous publications -->
+      <div class="form-group">
+        <label for="prevPubs" class="form-label">إصدارات سابقة (اختياري)</label>
+        <textarea
+          id="prevPubs"
+          name="prevPubs"
+          class="form-textarea"
+          dir="rtl"
+          style="min-height:80px;"
+          placeholder="اذكر أي إصدارات سابقة أو مشاركات في مجلات أدبية"></textarea>
+      </div>
+
+      <!-- Exclusive + Privacy -->
+      <div class="form-group no-border" style="gap:1rem;">
+        <div class="form-check">
+          <input
+            type="checkbox"
+            id="exclusive"
+            name="exclusive"
+            required
+            aria-required="true">
+          <label for="exclusive">
+            أؤكد أن هذا العمل لم يُقدَّم في الوقت ذاته لأي دار نشر أخرى، وأنه غير منشور سابقًا.
+          </label>
+        </div>
+        <span class="form-error" role="alert" aria-live="polite"></span>
+
+        <div class="form-check">
+          <input
+            type="checkbox"
+            id="privacy"
+            name="privacy"
+            required
+            aria-required="true">
+          <label for="privacy">
+            أوافق على
+            <a href="/privacy" style="color:var(--rouge);text-decoration:underline;">سياسة الخصوصية</a>
+            وأن تتواصل معي نضيد بخصوص هذا التقديم.
+          </label>
+        </div>
+        <span class="form-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="form-submit"
+        id="submitBtn"
+        aria-describedby="submitNote">
+        مراجعة التقديم وإعداده للإرسال ←
+      </button>
+
+      <p
+        id="submitNote"
+        style="font-family:var(--font-ar-body);font-size:12px;color:var(--gris-pale);direction:rtl;text-align:center;margin-top:1rem;line-height:1.7;opacity:.75;">
+        بعد الضغط ستُعرض ملخص تقديمك جاهزًا للإرسال بالبريد الإلكتروني.
+      </p>
+
+    </form>
+  </section>
+
+</div>
+</div>
+</main>
+
+<footer class="footer-min" role="contentinfo">
+  <div class="container">
+    <div class="footer-min-inner">
+      <p class="footer-copy ltr">© <span data-year></span> نضيد — دار الأدب والفكر والمعرفة</p>
+      <nav class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="nadeed-shared.js"></script>
+<script>
+/**
+ * Submit form logic
+ * HONEST APPROACH: validate fully client-side, then
+ * generate a mailto: link with the submission data as body,
+ * since no backend is connected. This is functional and honest —
+ * the user's email client opens with pre-filled content.
+ */
+(function initSubmitForm() {
+  const form      = document.getElementById('submitForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const status    = document.getElementById('formStatus');
+
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Full validation
+    if (!NADEED.validateForm(form)) {
+      NADEED.showFormStatus(form, 'error',
+        'يرجى تصحيح الأخطاء أعلاه قبل المتابعة.');
+      return;
+    }
+
+    // Collect data
+    const data = {
+      name:     form.authorName.value.trim(),
+      email:    form.authorEmail.value.trim(),
+      country:  form.authorCountry?.value?.trim() || '',
+      title:    form.bookTitle.value.trim(),
+      genre:    form.bookGenre.value,
+      words:    form.wordCount.value.trim(),
+      synopsis: form.synopsis.value.trim(),
+      bio:      form.authorBio.value.trim(),
+      prevPubs: form.prevPubs?.value?.trim() || '',
+      file:     form.manuscriptFile.files[0]?.name || 'لم يُرفع ملف',
+    };
+
+    // Build mailto body
+    const body =
+`تقديم مخطوطة — نضيد | NADEED
+══════════════════════════════
+
+الاسم: ${data.name}
+البريد: ${data.email}
+البلد: ${data.country || 'لم يُحدد'}
+
+العنوان: ${data.title}
+النوع: ${data.genre}
+عدد الكلمات: ${data.words}
+
+ملخص العمل:
+${data.synopsis}
+
+نبذة عن المؤلف:
+${data.bio}
+
+إصدارات سابقة:
+${data.prevPubs || 'لا توجد'}
+
+ملف النموذج: ${data.file}
+
+══════════════════════════════
+نضيد — دار الأدب والفكر والمعرفة
+nadeed.pub@outlook.com`;
+
+    const mailto =
+      `mailto:nadeed.pub@outlook.com` +
+      `?subject=${encodeURIComponent('تقديم مخطوطة: ' + data.title + ' — ' + data.name)}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    // Disable button, show instruction
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'جارٍ فتح بريدك الإلكتروني...';
+
+    setTimeout(() => {
+      window.location.href = mailto;
+
+      // Show clear instruction
+      submitBtn.textContent = 'تم إعداد التقديم ✓';
+      submitBtn.style.background = '#3A5A3A';
+
+      NADEED.showFormStatus(form, 'warning',
+        'تم فتح تطبيق البريد الإلكتروني بالبيانات المُدخلة. أرفق ملف المخطوطة يدويًا قبل الإرسال إلى nadeed.pub@outlook.com — لأن إرفاق الملفات لا يمكن أتمتته عبر رابط البريد.');
+
+      status.style.borderColor = '#A67C3C';
+    }, 600);
+  });
+})();
+</script>
+</body>
+</html>
