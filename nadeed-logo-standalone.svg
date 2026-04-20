@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NADEED — نضيد
+  Standalone visible logo — exported from canonical system
+  Same geometry as nadeed-logo.svg#nadeed-mark-ceremonial
+  S=6×, artboard 400×560
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 400 560"
+     width="400" height="560"
+     role="img">
+
+  <title>نضيد | NADEED — دار الأدب والفكر والمعرفة</title>
+  <desc>الشعار الرسمي لدار نضيد — نسخة مرئية مستقلة.</desc>
+
+  <rect width="400" height="560" fill="#0A0907"/>
+
+  <!-- Frame outer hairline -->
+  <rect x="16" y="16" width="368" height="528"
+        fill="none" stroke="rgba(237,228,211,0.18)" stroke-width="0.6"/>
+  <!-- Frame inner rule -->
+  <rect x="24" y="24" width="352" height="512"
+        fill="none" stroke="rgba(237,228,211,0.45)" stroke-width="1.8"/>
+
+  <!-- Corner marks -->
+  <line x1="16"  y1="16"  x2="44"  y2="16"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="16"  y1="16"  x2="16"  y2="44"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="384" y1="16"  x2="356" y2="16"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="384" y1="16"  x2="384" y2="44"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="16"  y1="544" x2="44"  y2="544" stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="16"  y1="544" x2="16"  y2="516" stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="384" y1="544" x2="356" y2="544" stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="384" y1="544" x2="384" y2="516" stroke="#9B1C1C" stroke-width="1.4"/>
+
+  <!-- Ring: center=(200,180) r=108 sw=4.2 -->
+  <circle cx="200" cy="180" r="108"
+          fill="none" stroke="#EDE4D3" stroke-width="4.2"/>
+
+  <!-- Cardinals N·E·S·W  len=18px inward from boundary -->
+  <line x1="200" y1="72"  x2="200" y2="90"
+        stroke="#EDE4D3" stroke-width="4.8" stroke-linecap="round"/>
+  <line x1="308" y1="180" x2="290" y2="180"
+        stroke="#EDE4D3" stroke-width="4.8" stroke-linecap="round"/>
+  <line x1="200" y1="288" x2="200" y2="270"
+        stroke="#EDE4D3" stroke-width="4.8" stroke-linecap="round"/>
+  <line x1="92"  y1="180" x2="110" y2="180"
+        stroke="#EDE4D3" stroke-width="4.8" stroke-linecap="round"/>
+
+  <!-- Arc: r=66, from (134,180) to (266,180), upper open semicircle -->
+  <path d="M 134,180 A 66,66 0 0,1 266,180"
+        fill="none" stroke="#EDE4D3"
+        stroke-width="14.4" stroke-linecap="round"/>
+
+  <!-- Stem: x=134, from y=180 to y=240 (len=60) -->
+  <line x1="134" y1="180" x2="134" y2="240"
+        stroke="#EDE4D3" stroke-width="14.4" stroke-linecap="round"/>
+
+  <!-- Foot: y=240, x from 107 to 161 (hw=27, center=134) -->
+  <line x1="120" y1="240" x2="161" y2="240"
+        stroke="#EDE4D3" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Nuqta: cx=200, cy=270, r=14.4 -->
+  <circle cx="200" cy="230" r="12.4" fill="#9B1C1C"/>
+
+  <!-- Divider: y=328 (ring_bottom 288 + 40) -->
+  <line x1="60" y1="328" x2="340" y2="328"
+        stroke="rgba(237,228,211,0.18)" stroke-width="0.6"/>
+
+  <!-- Arabic wordmark: y=390 -->
+  <text x="200" y="380"
+        text-anchor="middle"
+        font-family="'Amiri','Traditional Arabic',serif"
+        font-size="72"
+        fill="#EDE4D3">نضيد</text>
+
+  <!-- Latin wordmark: y=412 -->
+  <text x="200" y="420"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="11"
+        letter-spacing="12"
+        fill="#EDE4D3"
+        opacity="0.35">NADEED</text>
+
+  <!-- Rule: y=427, w=100, centered -->
+  <rect x="150" y="427" width="100" height="1.2" fill="#9B1C1C"/>
+
+  <!-- Tagline: y=445 -->
+  <text x="200" y="445"
+        text-anchor="middle"
+        font-family="'Noto Naskh Arabic','Traditional Arabic',serif"
+        font-size="13"
+        letter-spacing="2"
+        fill="#9B1C1C">للحرفِ قدَر</text>
+
+</svg>

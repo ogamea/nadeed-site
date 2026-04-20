@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Freeze Document — نضيد | NADEED</title><link rel="stylesheet" href="nadeed-fonts.css">
+<style>
+:root {
+  --noir:#0A0907; --rouge:#9B1C1C; --ivoire:#EDE4D3;
+  --ivoire-fonce:#C8BAA0; --parchemin:#F2EAD8; --parchemin-alt:#EDE6D8;
+  --gris-pale:#8A8078; --gris-encre:#3A3530;
+  --border:rgba(26,22,18,0.10);
+  --font-ar:'Amiri','Noto Naskh Arabic',serif;
+  --font-la:'Cormorant Garamond','EB Garamond',Georgia,serif;
+  --font-ui:'IBM Plex Sans Arabic',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;-webkit-font-smoothing:antialiased;}
+body{background:var(--parchemin);color:var(--gris-encre);font-family:var(--font-ar);line-height:2;direction:rtl;}
+.page{max-width:900px;margin:0 auto;padding:4rem 2rem;}
+.cover{background:var(--noir);padding:4rem;margin-bottom:4rem;text-align:center;position:relative;}
+.cover::before{content:'';position:absolute;inset:8px;border:.5px solid rgba(237,228,211,0.2);pointer-events:none;}
+.cover::after{content:'';position:absolute;inset:14px;border:1.5px solid rgba(237,228,211,0.35);pointer-events:none;}
+.cover-ar{font-family:var(--font-ar);font-size:52px;color:var(--ivoire);direction:rtl;margin-bottom:.3rem;position:relative;z-index:1;}
+.cover-la{font-family:var(--font-la);font-size:14px;letter-spacing:.5em;color:var(--ivoire);opacity:.4;direction:ltr;position:relative;z-index:1;margin-bottom:1.5rem;}
+.cover-rule{width:120px;height:1.5px;background:var(--rouge);margin:.75rem auto;}
+.cover-desc{font-family:var(--font-ar);font-size:18px;color:var(--rouge);direction:rtl;font-style:italic;letter-spacing:3px;position:relative;z-index:1;}
+.cover-tag{font-family:var(--font-la);font-size:11px;color:var(--ivoire);opacity:.2;letter-spacing:.35em;direction:ltr;margin-top:2rem;position:relative;z-index:1;}
+h2{font-family:var(--font-ar);font-size:22px;color:var(--noir);direction:rtl;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1.5px solid var(--rouge);}
+h3{font-family:var(--font-ar);font-size:16px;color:var(--gris-encre);direction:rtl;margin:1.25rem 0 .6rem;font-weight:700;}
+.sec{margin-bottom:3.5rem;}
+.def-row{display:grid;grid-template-columns:180px 1fr;gap:1px;background:var(--border);margin-bottom:1px;}
+.def-key{background:var(--parchemin-alt);padding:.85rem 1.1rem;font-family:var(--font-ui);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gris-pale);direction:ltr;}
+.def-val{background:var(--parchemin);padding:.85rem 1.1rem;font-family:var(--font-ar);font-size:15px;color:var(--gris-encre);direction:rtl;}
+.def-val.la{font-family:var(--font-la);direction:ltr;text-align:left;}
+.def-val.mono{font-family:'Courier New',monospace;font-size:13px;direction:ltr;text-align:left;color:var(--rouge);}
+.def-val.large-ar{font-size:28px;font-family:'Amiri',serif;color:var(--noir);}
+.swatch-row{display:flex;gap:1px;background:var(--border);}
+.swatch{flex:1;}
+.swatch-box{height:60px;}
+.swatch-info{background:var(--parchemin);padding:.6rem .8rem;border-top:none;}
+.swatch-name{font-family:var(--font-ar);font-size:12px;color:var(--gris-encre);direction:rtl;}
+.swatch-code{font-family:'Courier New',monospace;font-size:10px;color:var(--gris-pale);direction:ltr;}
+.logo-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);}
+.logo-cell{background:var(--parchemin);padding:2rem;display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.logo-cell.dark{background:var(--noir);}
+.logo-label{font-family:var(--font-ui);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris-pale);text-align:center;direction:ltr;}
+.logo-cell.dark .logo-label{color:rgba(237,228,211,.3);}
+.rule-box{background:var(--noir);color:var(--rouge);padding:1.5rem 2rem;border-right:3px solid var(--rouge);margin-top:1.5rem;}
+.rule-box p{font-family:var(--font-ar);font-size:14px;direction:rtl;line-height:1.9;color:var(--ivoire-fonce);}
+.rule-box p+p{margin-top:.75rem;}
+.rule-box strong{color:var(--rouge);}
+.usage-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+.usage-cell{background:var(--parchemin);padding:1.25rem 1.5rem;}
+.usage-cell.ok::before{content:'✓ ';color:#3A6B3A;font-family:var(--font-ui);}
+.usage-cell.no::before{content:'✕ ';color:var(--rouge);font-family:var(--font-ui);}
+.usage-cell p{font-family:var(--font-ar);font-size:13.5px;direction:rtl;color:var(--gris-encre);line-height:1.8;}
+.divider{height:2px;background:var(--rouge);margin:3rem 0;}
+.colophon{text-align:center;padding:2rem 0;border-top:.5px solid var(--border);}
+.colophon p{font-family:var(--font-la);font-size:11px;color:var(--gris-pale);direction:ltr;letter-spacing:.1em;opacity:.5;}
+@media(max-width:700px){
+  .def-row{grid-template-columns:1fr;}
+  .logo-row{grid-template-columns:1fr;}
+  .usage-grid{grid-template-columns:1fr;}
+  .swatch-row{flex-wrap:wrap;}
+  .swatch{min-width:calc(50% - 1px);}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-ar">نضيد</div>
+  <div class="cover-la">NADEED</div>
+  <div class="cover-rule"></div>
+  <div class="cover-desc">دار الأدب والفكر والمعرفة</div>
+  <div class="cover-tag">BRAND FREEZE DOCUMENT · FINAL · 2025</div>
+</div>
+
+<!-- SECTION 1: Naming -->
+<section class="sec">
+  <h2>١ — الاسم والتموضع</h2>
+
+  <div class="def-row">
+    <div class="def-key">الاسم العربي الرسمي</div>
+    <div class="def-val large-ar">نضيد</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">الاسم اللاتيني الرسمي</div>
+    <div class="def-val la" style="font-size:22px;letter-spacing:.08em;">NADEED</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">الوصف الرسمي — عربي</div>
+    <div class="def-val">دار الأدب والفكر والمعرفة</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">الوصف الرسمي — إنجليزي</div>
+    <div class="def-val la">House of Literature, Thought &amp; Knowledge</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">الشعار الوصفي الرئيسي</div>
+    <div class="def-val" style="font-style:italic;color:var(--rouge);">للحرفِ قدَر</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">الشعار الوصفي — إنجليزي</div>
+    <div class="def-val la" style="font-style:italic;color:var(--rouge);">The letter has its destiny</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">البيان الكامل المعتمد</div>
+    <div class="def-val" style="font-size:14px;line-height:1.9;">
+      نرفض الكتاب الذي يُنشر لأنه سيُباع.<br>
+      ونرفض القارئ الذي يُكتب له لأنه موجود.<br>
+      نكتب للذي يستحق أن يُكتب له —<br>
+      القارئ الذي يأتي إلى الصفحة طالبًا لا هاربًا.<br>
+      نُنضِّد ما يبقى.
+    </div>
+  </div>
+
+  <div class="rule-box" style="margin-top:1.5rem;">
+    <p><strong>قانون الترتيب:</strong> الاسم دائمًا = <strong>نضيد / NADEED</strong>. الوصف دائمًا = <strong>دار الأدب والفكر والمعرفة</strong>. ولا شيء يسبق هذا الترتيب أو يعكسه.</p>
+    <p><strong>ما يُحظر:</strong> NADEED Publishing — دار نشر رقمية — النشر الرقمي — NADID (بأي هجاء) — "منشورات نضيد".</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 2: Contact & Domain -->
+<section class="sec">
+  <h2>٢ — قنوات التواصل الرسمية الحالية</h2>
+
+  <div class="def-row">
+    <div class="def-key">البريد الإلكتروني المفعّل</div>
+    <div class="def-val mono">nadeed.pub@outlook.com</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">الدومين المستهدف</div>
+    <div class="def-val mono">nadeed.pub — (غير منشور بعد)</div>
+  </div>
+
+  <div class="rule-box" style="margin-top:1.5rem;">
+    <p><strong>قاعدة:</strong> القناة الوحيدة المفعّلة حاليًا هي البريد الإلكتروني أعلاه. لا تُضاف أي قناة أخرى (دومين، سوشيال ميديا، بريد branded) إلى هذا المرجع أو إلى أي صفحة منشورة قبل تفعيلها فعليًا.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 3: Color Palette -->
+<section class="sec">
+  <h2>٣ — لوحة الألوان الرسمية النهائية</h2>
+
+  <h3>الألوان الأساسية</h3>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-box" style="background:#0A0907;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">الحبر المطلق</div>
+        <div class="swatch-code">#0A0907</div>
+        <div class="swatch-code">Hero · Footer · Seal BG</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#9B1C1C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">أحمر المطبعة</div>
+        <div class="swatch-code">#9B1C1C</div>
+        <div class="swatch-code">Nuqta · Rules · CTA · Accent</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#EDE4D3;border:.5px solid rgba(26,22,18,0.08);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">العاج القديم</div>
+        <div class="swatch-code">#EDE4D3</div>
+        <div class="swatch-code">Text on dark · Logo · Frame</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#F2EAD8;border:.5px solid rgba(26,22,18,0.08);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">الرق الدافئ</div>
+        <div class="swatch-code">#F2EAD8</div>
+        <div class="swatch-code">Page Background Primary</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:1.5rem;">الألوان الثانوية</h3>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-box" style="background:#EDE6D8;border:.5px solid rgba(26,22,18,0.08);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">الرق الثاني</div>
+        <div class="swatch-code">#EDE6D8</div>
+        <div class="swatch-code">Card surfaces · Alt sections</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#C8BAA0;border:.5px solid rgba(26,22,18,0.08);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">العاج الداكن</div>
+        <div class="swatch-code">#C8BAA0</div>
+        <div class="swatch-code">Secondary text on dark</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#3A3530;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">الحبر الناعم</div>
+        <div class="swatch-code">#3A3530</div>
+        <div class="swatch-code">Body text on light</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#8A8078;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">الحبر الشاحب</div>
+        <div class="swatch-code">#8A8078</div>
+        <div class="swatch-code">Tertiary · Labels · Hints</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-box" style="margin-top:1.5rem;">
+    <p><strong>قاعدة التناوب:</strong> الصفحة الرئيسية: Hero أسود → محتوى عاجي → About أسود → مقالات عاجي فاتح → Newsletter عاجي (ليس أسود) → Footer أسود.</p>
+    <p><strong>الذهب:</strong> #A67C3C — يُستخدم بالغ الندرة: إشارة واحدة فقط. ليس لونًا دوريًا.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 4: Typography -->
+<section class="sec">
+  <h2>٤ — المنظومة الطباعية الرسمية</h2>
+
+  <div class="def-row">
+    <div class="def-key">عربي · العناوين</div>
+    <div class="def-val la">Amiri — SIL OFL — self-hosted via nadeed-fonts.css</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">عربي · نص الجسم</div>
+    <div class="def-val la">Noto Naskh Arabic — SIL OFL — self-hosted via nadeed-fonts.css</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">لاتيني · العناوين</div>
+    <div class="def-val la">Cormorant Garamond — SIL OFL — self-hosted via nadeed-fonts.css</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">لاتيني · نص الجسم</div>
+    <div class="def-val la">EB Garamond — SIL OFL — self-hosted via nadeed-fonts.css</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">واجهة المستخدم (UI)</div>
+    <div class="def-val la">IBM Plex Sans Arabic — SIL OFL — self-hosted via nadeed-fonts.css</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">حالة النشر</div>
+    <div class="def-val">@font-face معرَّفة في nadeed-fonts.css — ملفات woff2 تُنشر على الخادم. ريثما تُنشر الملفات تُطبَّق خطوط النظام تلقائيًا دون أي استدعاء خارجي.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 5: Logo -->
+<section class="sec">
+  <h2>٥ — الشعار — ثلاث نسخ رسمية فقط</h2>
+
+  <div class="logo-row">
+    <div class="logo-cell dark">
+      <svg width="32" height="32" aria-hidden="true" focusable="false"><use href="nadeed-logo.svg#nadeed-mark-nav"/></svg>
+      <div class="logo-label">nav / micro<br>(28–34px)</div>
+    </div>
+    <div class="logo-cell dark">
+      <svg width="90" height="90" aria-hidden="true"><use href="nadeed-logo.svg#nadeed-mark-primary"/></svg>
+      <div class="logo-label">primary mark<br>(80–120px)</div>
+    </div>
+    <div class="logo-cell dark">
+      <svg width="100" height="140" aria-hidden="true"><use href="nadeed-logo.svg#nadeed-mark-ceremonial"/></svg>
+      <div class="logo-label">ceremonial / framed<br>(180px+)</div>
+    </div>
+  </div>
+
+  <div class="rule-box" style="margin-top:1.5rem;">
+    <p><strong>القاعدة الصارمة:</strong> لا تُستخدم نسخة رابعة من الشعار في أي مكان. إذا لم تنطبق أي من النسخ الثلاث، يُستشار مرجع الهوية قبل إنشاء نسخة جديدة.</p>
+    <p><strong>الاتساق:</strong> الإشارة الهندسية (الحلقة + النون + ٤ خطوط كاردينال + النقطة الحمراء) يجب أن تكون متطابقة في كل صفحة.</p>
+  </div>
+
+  <!-- Usage rules -->
+  <h3>قواعد الاستخدام</h3>
+  <div class="usage-grid">
+    <div class="usage-cell ok"><p>نضيد على خلفية الحبر المطلق (أسود)</p></div>
+    <div class="usage-cell ok"><p>نضيد على خلفية الرق الدافئ (عاجي)</p></div>
+    <div class="usage-cell ok"><p>نضيد / NADEED بهذا الترتيب دائمًا</p></div>
+    <div class="usage-cell ok"><p>النقطة الحمراء #9B1C1C دائمًا</p></div>
+    <div class="usage-cell no"><p>لا تُستخدم على خلفية بيضاء خالصة (#FFFFFF)</p></div>
+    <div class="usage-cell no"><p>لا يُضاف ظل أو glow أو تأثيرات</p></div>
+    <div class="usage-cell no"><p>لا يُغيَّر لون النقطة الحمراء</p></div>
+    <div class="usage-cell no"><p>لا تُستخدم كلمة "Publishing" مع الاسم</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 6: Tone -->
+<section class="sec">
+  <h2>٦ — طبقات الصوت</h2>
+
+  <div class="def-row">
+    <div class="def-key">Brand Voice</div>
+    <div class="def-val">الصفحة الرئيسية، عن نضيد، البيان — صوت الموقف، لا يتودّد، يقول ما يؤمن به.</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">Editorial Voice</div>
+    <div class="def-val">المقالات، صفحات الكتب — صوت النقد والأدب، دقيق ومعمّق وصادق مع النص.</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">Operational Voice</div>
+    <div class="def-val">التقديم، التواصل، الشروط — واضح ومحترم وغير تودّدي، لكن بلا برود.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 7: Site Architecture -->
+<section class="sec">
+  <h2>٧ — هيكل الموقع الرسمي</h2>
+
+  <div class="def-row">
+    <div class="def-key">/ (index)</div>
+    <div class="def-val la">nadeed-index.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/books</div>
+    <div class="def-val la">nadeed-books.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/books/[slug]</div>
+    <div class="def-val la">nadeed-book-detail.html ✓ Built (template)</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/authors</div>
+    <div class="def-val la">nadeed-authors.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/authors/[slug]</div>
+    <div class="def-val la">nadeed-author-detail.html ✓ Built (template)</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/articles</div>
+    <div class="def-val la">nadeed-articles.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/articles/[slug]</div>
+    <div class="def-val la">nadeed-article-detail.html ✓ Built (template)</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/about</div>
+    <div class="def-val la">nadeed-about.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/submit</div>
+    <div class="def-val la">nadeed-submit.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/contact</div>
+    <div class="def-val la">nadeed-contact.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/privacy</div>
+    <div class="def-val la">nadeed-privacy.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/terms</div>
+    <div class="def-val la">nadeed-terms.html ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/press</div>
+    <div class="def-val la">nadeed-press.html — Phase 2</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/partnerships</div>
+    <div class="def-val la">nadeed-partnerships.html — Phase 2</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/sitemap.xml</div>
+    <div class="def-val la">sitemap.xml ✓ Built</div>
+  </div>
+  <div class="def-row">
+    <div class="def-key">/robots.txt</div>
+    <div class="def-val la">robots.txt ✓ Built</div>
+  </div>
+</section>
+
+<div class="colophon">
+  <p>NADEED · نضيد — Brand Freeze Document · Final · 2025<br>
+  هذه الوثيقة مرجع مغلق. أي تغيير في الاسم أو الوصف أو الشعار يستلزم تحديث هذه الوثيقة أولًا.</p>
+</div>
+
+</div>
+</body>
+</html>
