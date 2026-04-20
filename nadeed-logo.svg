@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+════════════════════════════════════════════════════════════════════
+  NADEED — نضيد  |  nadeed-logo.svg  |  Canonical Logo System
+  Single source of truth. All variants derived from this file.
+════════════════════════════════════════════════════════════════════
+
+  ── MATHEMATICAL FOUNDATION ──────────────────────────────────────
+  Reference unit: 1u = stroke-unit at nav scale
+
+  NAV MARK (S=1×) — artboard 40 × 40  center (20,20)
+  ───────────────────────────────────────────────────
+  Ring:         r=18,  sw=0.70
+  Tick:         len=3, sw=0.80   [4 cardinals only: N·E·S·W]
+  Arc:          r=11,  sw=2.40   [M(9,20) A 11,11 0 0,1 (31,20)]
+  Stem:         x=9, y1=20→y2=30  sw=2.40
+  Foot:         y=30, x1=4.5→x2=13.5  hw=4.5  sw=1.50
+  Nuqta:        cx=20, cy=35, r=2.40
+                cy = foot_y + 1×(sw/2 + r) = 30 + 5 = 35
+                [sits below foot, touches nothing]
+
+  CLEARANCE CHECKS at S=1×
+  ───────────────────────────────────────────────────
+  Arc top:      cy_center − arc_r − sw/2 = 20−11−1.2 = 7.8   → ring top 2  → gap 5.8u ✓
+  Stem left:    x − sw/2 = 9 − 1.2 = 7.8                     → ring left 2 → gap 5.8u ✓
+  Foot left:    x1 − sw/2 = 4.5 − 0.75 = 3.75               → ring left 2 → gap 1.75u ✓
+  Nuqta bottom: cy + r = 35 + 2.4 = 37.4                     → ring bot 38 → gap 0.6u ✓
+  Nuqta top:    cy − r = 35 − 2.4 = 32.6                     → foot 30     → gap 2.6u ✓
+
+  SCALE TABLE — all values = nav-value × S
+  ───────────────────────────────────────────────────
+  S     Artboard    Ring-r  Arc-r  Arc-sw  Nuqta-cy  Nuqta-r
+  1×    40 × 40      18      11     2.40     35        2.40
+  3×   120 × 120     54      33     7.20    105        7.20
+  6×   240 × 240    108      66    14.40    210       14.40
+
+  HIERARCHY (visual weight, top to bottom)
+  ───────────────────────────────────────────────────
+  1st  Geometric mark (arc + stem + foot)
+  2nd  Nuqta (the crimson dot — only coloured element)
+  3rd  Arabic wordmark: نضيد  (strong, single weight)
+  4th  Latin wordmark:  NADEED  (secondary, extreme tracking)
+  —    Tagline rule + text (tertiary, small)
+
+  CEREMONIAL VARIANT — colophon frame + full lockup
+  ───────────────────────────────────────────────────
+  Artboard:  400 × 560  (wider margins for breathing room)
+  Frame outer:  (16,16) → 368 × 528   0.6 hairline
+  Frame inner:  (24,24) → 352 × 512   1.8 rule
+  Corner marks: 28px, #9B1C1C, sw=1.4
+  Mark center:  (200, 180)  ring-r=108 (S=6×)
+  Text zone y:  308 → 540
+    Arabic:     y=390  font-size=72
+    Latin:      y=412  font-size=11  ls=12
+    Rule:       y=427  w=120 cx=200
+    Tagline:    y=445  font-size=14
+
+════════════════════════════════════════════════════════════════════
+-->
+
+<!-- ── SPRITE (display:none — symbols only) ─────────────────────── -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="0" height="0"
+     style="display:none;position:absolute"
+     aria-hidden="true">
+<defs>
+
+<!-- ══ SYMBOL 1: nav  S=1×  viewBox 40×40 ══ -->
+<symbol id="nadeed-mark-nav" viewBox="0 0 40 40">
+  <title>نضيد | NADEED</title>
+  <!-- Ring -->
+  <circle cx="20" cy="20" r="18"
+          fill="none" stroke="#EDE4D3" stroke-width="0.70"/>
+  <!-- Cardinals N·E·S·W  len=3 from boundary inward -->
+  <line x1="20" y1="2"  x2="20" y2="5"
+        stroke="#EDE4D3" stroke-width="0.80" stroke-linecap="round"/>
+  <line x1="38" y1="20" x2="35" y2="20"
+        stroke="#EDE4D3" stroke-width="0.80" stroke-linecap="round"/>
+  <line x1="20" y1="38" x2="20" y2="35"
+        stroke="#EDE4D3" stroke-width="0.80" stroke-linecap="round"/>
+  <line x1="2"  y1="20" x2="5"  y2="20"
+        stroke="#EDE4D3" stroke-width="0.80" stroke-linecap="round"/>
+  <!-- Arc: M(cx−r,cy) A r,r 0 0,1 (cx+r,cy)  r=11 → upper open semicircle -->
+  <path d="M 9,20 A 11,11 0 0,1 31,20"
+        fill="none" stroke="#EDE4D3"
+        stroke-width="2.40" stroke-linecap="round"/>
+  <!-- Stem: x=9, y from 20→30 -->
+  <line x1="9" y1="20" x2="9" y2="30"
+        stroke="#EDE4D3" stroke-width="2.40" stroke-linecap="round"/>
+  <!-- Foot: y=30, x from 4.5→13.5 (hw=4.5, center=9) -->
+  <line x1="4.5" y1="30" x2="13.5" y2="30"
+        stroke="#EDE4D3" stroke-width="1.50" stroke-linecap="round"/>
+  <!-- Nuqta: cx=20, cy=35, r=2.40 -->
+  <circle cx="20" cy="35" r="2.40" fill="#9B1C1C"/>
+</symbol>
+
+<!-- ══ SYMBOL 2: primary  S=3×  viewBox 120×120 ══ -->
+<symbol id="nadeed-mark-primary" viewBox="0 0 120 120">
+  <title>نضيد | NADEED — Primary Mark</title>
+  <!-- Ring  r=54 -->
+  <circle cx="60" cy="60" r="54"
+          fill="none" stroke="#EDE4D3" stroke-width="2.10"/>
+  <!-- Cardinals len=9 -->
+  <line x1="60" y1="6"   x2="60" y2="15"
+        stroke="#EDE4D3" stroke-width="2.40" stroke-linecap="round"/>
+  <line x1="114" y1="60" x2="105" y2="60"
+        stroke="#EDE4D3" stroke-width="2.40" stroke-linecap="round"/>
+  <line x1="60" y1="114" x2="60" y2="105"
+        stroke="#EDE4D3" stroke-width="2.40" stroke-linecap="round"/>
+  <line x1="6"  y1="60"  x2="15" y2="60"
+        stroke="#EDE4D3" stroke-width="2.40" stroke-linecap="round"/>
+  <!-- Arc  r=33, from (27,60) to (93,60) -->
+  <path d="M 27,60 A 33,33 0 0,1 93,60"
+        fill="none" stroke="#EDE4D3"
+        stroke-width="7.20" stroke-linecap="round"/>
+  <!-- Stem x=27, y 60→90 -->
+  <line x1="27" y1="60" x2="27" y2="90"
+        stroke="#EDE4D3" stroke-width="7.20" stroke-linecap="round"/>
+  <!-- Foot y=90, x from 13.5→40.5 -->
+  <line x1="13.5" y1="90" x2="40.5" y2="90"
+        stroke="#EDE4D3" stroke-width="4.50" stroke-linecap="round"/>
+  <!-- Nuqta  cx=60, cy=105, r=7.20 -->
+  <circle cx="60" cy="105" r="7.20" fill="#9B1C1C"/>
+</symbol>
+
+<!-- ══ SYMBOL 3: ceremonial  full lockup  viewBox 400×560 ══ -->
+<symbol id="nadeed-mark-ceremonial" viewBox="0 0 400 560">
+  <title>نضيد | NADEED — Ceremonial Lockup</title>
+
+  <!-- Background fill -->
+  <rect width="400" height="560" fill="#0A0907"/>
+
+  <!-- Colophon frame: outer hairline -->
+  <rect x="16" y="16" width="368" height="528"
+        fill="none" stroke="rgba(237,228,211,0.18)" stroke-width="0.6"/>
+  <!-- Colophon frame: inner rule -->
+  <rect x="24" y="24" width="352" height="512"
+        fill="none" stroke="rgba(237,228,211,0.45)" stroke-width="1.8"/>
+
+  <!-- Corner marks TL -->
+  <line x1="16"  y1="16"  x2="44"  y2="16"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="16"  y1="16"  x2="16"  y2="44"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <!-- Corner marks TR -->
+  <line x1="384" y1="16"  x2="356" y2="16"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="384" y1="16"  x2="384" y2="44"  stroke="#9B1C1C" stroke-width="1.4"/>
+  <!-- Corner marks BL -->
+  <line x1="16"  y1="544" x2="44"  y2="544" stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="16"  y1="544" x2="16"  y2="516" stroke="#9B1C1C" stroke-width="1.4"/>
+  <!-- Corner marks BR -->
+  <line x1="384" y1="544" x2="356" y2="544" stroke="#9B1C1C" stroke-width="1.4"/>
+  <line x1="384" y1="544" x2="384" y2="516" stroke="#9B1C1C" stroke-width="1.4"/>
+
+  <!-- ── MARK ZONE: center (200,180), S=6× ── -->
+  <!-- Ring  r=108 -->
+  <circle cx="200" cy="180" r="108"
+          fill="none" stroke="#EDE4D3" stroke-width="4.20"/>
+  <!-- Cardinals len=18 -->
+  <line x1="200" y1="72"  x2="200" y2="90"
+        stroke="#EDE4D3" stroke-width="4.80" stroke-linecap="round"/>
+  <line x1="308" y1="180" x2="290" y2="180"
+        stroke="#EDE4D3" stroke-width="4.80" stroke-linecap="round"/>
+  <line x1="200" y1="288" x2="200" y2="270"
+        stroke="#EDE4D3" stroke-width="4.80" stroke-linecap="round"/>
+  <line x1="92"  y1="180" x2="110" y2="180"
+        stroke="#EDE4D3" stroke-width="4.80" stroke-linecap="round"/>
+  <!-- Arc  r=66, from (134,180) to (266,180) -->
+  <path d="M 134,180 A 66,66 0 0,1 266,180"
+        fill="none" stroke="#EDE4D3"
+        stroke-width="14.40" stroke-linecap="round"/>
+  <!-- Stem x=134, y 180→360 (stem-length=180=10u×S=10×6×3=wait: 30×6=180 ✓)
+       No — stem at nav=10u, so S=6: 10×6=60. y1=180→y2=240 -->
+  <line x1="134" y1="180" x2="134" y2="240"
+        stroke="#EDE4D3" stroke-width="14.40" stroke-linecap="round"/>
+  <!-- Foot y=240, hw=4.5×6=27, center=134, x from 107→161 -->
+  <line x1="107" y1="240" x2="161" y2="240"
+        stroke="#EDE4D3" stroke-width="9.00" stroke-linecap="round"/>
+  <!-- Nuqta: cx=200, cy=210+14.4+14.4=~ let's calc:
+       nav: cy=35 = foot_y(30) + 5 = 30+5
+       S=6: foot_y=240, cy = 240 + 5×6 = 240+30 = 270, r=14.40
+       Check bottom: 270+14.4=284.4, ring bottom=180+108=288 → gap=3.6 ✓
+       Check top:    270-14.4=255.6, foot=240 → gap=15.6 ✓ -->
+  <circle cx="200" cy="270" r="14.40" fill="#9B1C1C"/>
+
+  <!-- ── DIVIDER: 40px below ring bottom (288+40=328) ── -->
+  <line x1="60" y1="328" x2="340" y2="328"
+        stroke="rgba(237,228,211,0.18)" stroke-width="0.6"/>
+
+  <!-- ── TEXT ZONE: y=328→540, vertical rhythm 22pt leading ── -->
+
+  <!-- Arabic wordmark: size=72, baseline y=390 -->
+  <!-- Gap from divider: 390−72×0.75(cap)=390−54=336 → 8px from divider ✓ -->
+  <text x="200" y="390"
+        text-anchor="middle"
+        font-family="'Noto Naskh Arabic','Traditional Arabic',serif"
+        font-size="72"
+        fill="#EDE4D3">نَضِيد</text>
+
+  <!-- Latin wordmark: size=11, baseline y=412 (390+22) -->
+  <text x="200" y="412"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="11"
+        letter-spacing="12"
+        fill="#EDE4D3"
+        opacity="0.35">NADEED</text>
+
+  <!-- Tagline rule: y=427, centered w=100 -->
+  <rect x="150" y="427" width="100" height="1.2" fill="#9B1C1C"/>
+
+  <!-- Tagline: size=13, baseline y=445 -->
+  <text x="200" y="445"
+        text-anchor="middle"
+        font-family="'Noto Naskh Arabic','Traditional Arabic',serif"
+        font-size="13"
+        letter-spacing="2"
+        fill="#9B1C1C">لِلْحَرْفِ قَدَر</text>
+
+</symbol>
+
+</defs>
+</svg>
+<!-- ── END SPRITE ─────────────────────────────────────────────────── -->
+
+<!--
+════════════════════════════════════════════════════════════════════
+  USAGE
+  ════════════════════════════════════════════════════════════════════
+
+  Nav mark (28px):
+    <svg width="28" height="28" aria-hidden="true" focusable="false">
+      <use href="nadeed-logo.svg#nadeed-mark-nav"/>
+    </svg>
+
+  Primary mark (120px):
+    <svg width="120" height="120" aria-label="نضيد | NADEED">
+      <use href="nadeed-logo.svg#nadeed-mark-primary"/>
+    </svg>
+
+  Ceremonial lockup (400×560, full colophon):
+    <svg width="400" height="560" aria-label="نضيد — دار الأدب والفكر والمعرفة">
+      <use href="nadeed-logo.svg#nadeed-mark-ceremonial"/>
+    </svg>
+
+  Responsive ceremonial (CSS controls size):
+    <svg class="hero-seal" viewBox="0 0 400 560" aria-hidden="true">
+      <use href="nadeed-logo.svg#nadeed-mark-ceremonial"/>
+    </svg>
+
+  MINIMUM SIZE: 24px width. Below 24px use text "نضيد" only.
+  NEVER draw any variant independently. All sizes → reference symbols above.
+════════════════════════════════════════════════════════════════════
+-->

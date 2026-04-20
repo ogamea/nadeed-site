@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الإصدارات — نضيد | NADEED</title>
+<meta name="description" content="إصدارات نضيد — دار الأدب والفكر والمعرفة. روايات، شعر، مقالات فكرية، ونقد أدبي بمعايير تحرير لا تهاون فيها.">
+<meta name="author" content="نضيد — دار الأدب والفكر والمعرفة">
+<link rel="canonical" href="https://nadeed.pub/books">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "إصدارات نضيد",
+  "description": "الكتالوج الكامل لإصدارات نضيد — دار الأدب والفكر والمعرفة",
+  "url": "https://nadeed.pub/books",
+  "publisher": {
+    "@type": "Organization",
+    "name": "نضيد",
+    "alternateName": "NADEED",
+    "url": "https://nadeed.pub"
+  }
+}
+</script><link rel="stylesheet" href="nadeed-fonts.css">
+<link rel="stylesheet" href="nadeed-shared.css">
+
+<style>
+/* ══ PAGE-SPECIFIC: BOOKS ══ */
+
+/* Page header — dark, contained */
+.page-header {
+  background: var(--noir);
+  padding: calc(var(--nav-h) + 4rem) 0 4rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid var(--rouge);
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(237,228,211,0.006) 3px, rgba(237,228,211,0.006) 4px
+  );
+  pointer-events: none;
+}
+.page-title {
+  font-family: var(--font-ar-display);
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 400;
+  color: var(--ivoire);
+  direction: rtl;
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+.page-sub {
+  font-family: var(--font-ar-body);
+  font-size: 16px;
+  color: var(--ivoire-fonce);
+  direction: rtl;
+  opacity: 0.55;
+  position: relative;
+}
+
+/* Filters — sticky, ivory bg */
+.filters-bar {
+  background: var(--ivoire-card);
+  border-bottom: 0.5px solid var(--ivoire-border);
+  padding: 0.85rem 0;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 50;
+}
+.filters-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gris-pale);
+  padding: 0.45rem 1rem;
+  border: 0.5px solid var(--ivoire-border);
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  direction: ltr;
+  white-space: nowrap;
+}
+.filter-btn:hover { color: var(--noir-doux); border-color: var(--gris-pale); }
+.filter-btn.active,
+.filter-btn[aria-pressed="true"] {
+  color: var(--ivoire);
+  background: var(--rouge);
+  border-color: var(--rouge);
+}
+.filter-count {
+  font-family: var(--font-la-body);
+  font-size: 12px;
+  color: var(--gris-pale);
+  direction: ltr;
+  margin-right: auto;
+}
+
+/* Catalog — ivory bg */
+.catalog-section { padding: 5rem 0 7rem; background: var(--ivoire-bg); }
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--ivoire-border);
+}
+
+/* Book card — non-clickable, informational only */
+.book-card {
+  background: var(--ivoire-bg);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+}
+.book-card:hover { background: var(--ivoire-card); }
+
+.book-cover {
+  aspect-ratio: 2/3;
+  position: relative;
+  overflow: hidden;
+}
+.book-cover-art {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.bc-1 { background: linear-gradient(168deg,#1A0E08 0%,#2E1810 100%); }
+.bc-2 { background: linear-gradient(168deg,#0A0F0D 0%,#142018 100%); }
+.bc-3 { background: linear-gradient(168deg,#120810 0%,#1E0F1C 100%); }
+.bc-4 { background: linear-gradient(168deg,#0E0C07 0%,#1C1A08 100%); }
+.bc-5 { background: linear-gradient(168deg,#0C1118 0%,#182030 100%); }
+.bc-6 { background: linear-gradient(168deg,#120E06 0%,#241C0C 100%); }
+.bc-7 { background: linear-gradient(168deg,#0A1210 0%,#142A20 100%); }
+.bc-8 { background: linear-gradient(168deg,#180808 0%,#2E1010 100%); }
+
+.book-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  font-family: var(--font-ui);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--rouge);
+  color: var(--ivoire);
+  padding: 0.3rem 0.6rem;
+  direction: ltr;
+  z-index: 1;
+}
+.book-badge.soon { background: rgba(166,124,60,0.9); }
+
+.book-info {
+  padding: 1.25rem 1.5rem;
+  border-top: 0.5px solid var(--ivoire-border);
+  flex: 1;
+}
+.book-year {
+  font-family: var(--font-la-body);
+  font-size: 11px;
+  color: var(--gris-pale);
+  direction: ltr;
+  margin-top: 0.4rem;
+  opacity: 0.5;
+}
+
+/* Empty state (for filter results with no match) */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: none;
+}
+.empty-state.visible { display: block; }
+.empty-state p {
+  font-family: var(--font-ar-body);
+  font-size: 16px;
+  color: var(--gris-pale);
+  direction: rtl;
+}
+
+/* .footer-min and children — canonical in nadeed-shared.css */
+
+@media (max-width: 768px) {
+  .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+  .filters-inner { gap: 0.5rem; }
+}
+@media (max-width: 480px) {
+  .catalog-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV — identical mark ════ -->
+<nav class="nav" role="navigation" aria-label="القائمة الرئيسية">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="نضيد — الصفحة الرئيسية">
+      <svg width="28" height="28" aria-hidden="true" focusable="false"><use href="nadeed-logo.svg#nadeed-mark-nav"/></svg>
+      <div>
+        <span class="nav-logo-wordmark">نَضِيد</span>
+        <span class="nav-logo-sub">NADEED</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/books"    class="nav-link active" aria-current="page">الإصدارات</a></li>
+      <li><a href="/authors"  class="nav-link">المؤلفون</a></li>
+      <li><a href="/articles" class="nav-link">المقالات</a></li>
+      <li><a href="/about"    class="nav-link">عن نضيد</a></li>
+    </ul>
+    <a href="/submit" class="nav-cta">قدّم مخطوطتك</a>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="nav-drawer" id="navDrawer" aria-label="القائمة المتنقلة" aria-hidden="true">
+  <a href="/books"    class="drawer-link active">الإصدارات</a>
+  <a href="/authors"  class="drawer-link">المؤلفون</a>
+  <a href="/articles" class="drawer-link">المقالات</a>
+  <a href="/about"    class="drawer-link">عن نضيد</a>
+  <a href="/submit"   class="drawer-link cta">قدّم مخطوطتك ←</a>
+  <p class="drawer-contact ltr">nadeed.pub@outlook.com</p>
+</nav>
+
+
+<header class="page-header">
+  <div class="container">
+    <h1 class="page-title">الإصدارات</h1>
+    <p class="page-sub">كل كتاب هنا وعدٌ — بجودة لا تساوم، وأثرٍ لا يُنسى</p>
+  </div>
+</header>
+
+<div role="navigation" aria-label="تصفية الإصدارات" class="filters-bar">
+  <div class="container">
+    <div class="filters-inner">
+      <button
+        class="filter-btn active"
+        data-filter="all"
+        aria-pressed="true"
+        type="button">الكل</button>
+      <button
+        class="filter-btn"
+        data-filter="novel"
+        aria-pressed="false"
+        type="button">رواية</button>
+      <button
+        class="filter-btn"
+        data-filter="poetry"
+        aria-pressed="false"
+        type="button">شعر</button>
+      <button
+        class="filter-btn"
+        data-filter="thought"
+        aria-pressed="false"
+        type="button">فكر</button>
+      <button
+        class="filter-btn"
+        data-filter="criticism"
+        aria-pressed="false"
+        type="button">نقد</button>
+      <button
+        class="filter-btn"
+        data-filter="essay"
+        aria-pressed="false"
+        type="button">مقالات</button>
+      <!-- Live region for count updates -->
+      <span
+        class="filter-count"
+        aria-live="polite"
+        aria-atomic="true"
+        id="catalogCount">٨ إصدارات</span>
+    </div>
+  </div>
+</div>
+
+<main>
+<section class="catalog-section" aria-label="كتالوج الإصدارات">
+  <div class="container">
+    <div class="catalog-grid" id="catalogGrid" role="list" aria-label="قائمة الإصدارات">
+
+      <article class="book-card" data-genre="novel" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-1">
+            <div class="book-cover-frame"></div>
+            <div class="book-badge">جديد</div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">أبواب<br>لا تُغلَك</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">لمياء المنصور</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">FICTION · NOVEL</p>
+          <h2 class="book-title">أبواب لا تُغلَك</h2>
+          <p class="book-author">لمياء المنصور</p>
+          <p class="book-year ltr">2025 · نضيد</p>
+        </div>
+      </article>
+
+      <article class="book-card" data-genre="thought" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-2">
+            <div class="book-cover-frame"></div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">في جغرافيا<br>الخوف</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">طارق البشير</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">THOUGHT · ESSAY</p>
+          <h2 class="book-title">في جغرافيا الخوف</h2>
+          <p class="book-author">طارق البشير</p>
+          <p class="book-year ltr">2025 · نضيد</p>
+        </div>
+      </article>
+
+      <article class="book-card" data-genre="poetry" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-3">
+            <div class="book-cover-frame"></div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">ديوان<br>الغياب</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">سارة الوديان</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">POETRY</p>
+          <h2 class="book-title">ديوان الغياب</h2>
+          <p class="book-author">سارة الوديان</p>
+          <p class="book-year ltr">2025 · نضيد</p>
+        </div>
+      </article>
+
+      <article class="book-card" data-genre="criticism" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-4">
+            <div class="book-cover-frame"></div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">الكتابة<br>كفعل مقاومة</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">خالد العزيز</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">LITERARY CRITICISM</p>
+          <h2 class="book-title">الكتابة كفعل مقاومة</h2>
+          <p class="book-author">خالد العزيز</p>
+          <p class="book-year ltr">2025 · نضيد</p>
+        </div>
+      </article>
+
+      <article class="book-card" data-genre="novel" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-5">
+            <div class="book-cover-frame"></div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">ما لا تقوله<br>الخرائط</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">رامي الجنيدي</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">FICTION · NOVEL</p>
+          <h2 class="book-title">ما لا تقوله الخرائط</h2>
+          <p class="book-author">رامي الجنيدي</p>
+          <p class="book-year ltr">2025 · نضيد</p>
+        </div>
+      </article>
+
+      <article class="book-card" data-genre="essay" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-6">
+            <div class="book-cover-frame"></div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">مقالات في<br>فلسفة الجمال</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">د. منى الصالح</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">AESTHETICS · PHILOSOPHY</p>
+          <h2 class="book-title">مقالات في فلسفة الجمال</h2>
+          <p class="book-author">د. منى الصالح</p>
+          <p class="book-year ltr">2025 · نضيد</p>
+        </div>
+      </article>
+
+      <article class="book-card" data-genre="poetry" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-7">
+            <div class="book-cover-frame"></div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">حجر<br>في الماء</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">نور الدين العمراني</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">POETRY</p>
+          <h2 class="book-title">حجر في الماء</h2>
+          <p class="book-author">نور الدين العمراني</p>
+          <p class="book-year ltr">2025 · نضيد</p>
+        </div>
+      </article>
+
+      <article class="book-card" data-genre="thought" role="listitem" data-reveal>
+        <div class="book-cover" aria-hidden="true">
+          <div class="book-cover-art bc-8">
+            <div class="book-cover-frame"></div>
+            <div class="book-badge soon">قريبًا</div>
+            <div style="text-align:center;padding:1rem;position:relative;z-index:1;">
+              <div class="book-cover-title">العقل في<br>مواجهة<br>الفوضى</div>
+              <div class="book-cover-line"></div>
+              <div class="book-cover-author">ياسر الحريري</div>
+            </div>
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-genre ltr">THOUGHT · PHILOSOPHY</p>
+          <h2 class="book-title">العقل في مواجهة الفوضى</h2>
+          <p class="book-author">ياسر الحريري</p>
+          <p class="book-year ltr">قريبًا · نضيد</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="empty-state" id="emptyState" role="status" aria-live="polite">
+      <p>لا توجد إصدارات في هذا التصنيف حاليًا.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="footer-min" role="contentinfo">
+  <div class="container">
+    <div class="footer-min-inner">
+      <p class="footer-copy ltr">© <span data-year></span> نضيد — دار الأدب والفكر والمعرفة</p>
+      <nav class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="nadeed-shared.js"></script>
+<script>
+// Filter logic with aria-pressed and aria-live
+(function initFilters() {
+  const btns   = document.querySelectorAll('.filter-btn');
+  const cards  = document.querySelectorAll('.book-card');
+  const count  = document.getElementById('catalogCount');
+  const empty  = document.getElementById('emptyState');
+
+  const toArabic = n => n.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      // Update aria-pressed
+      btns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      const filter = btn.dataset.filter;
+      let visible = 0;
+
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.genre === filter;
+        card.style.display = show ? 'flex' : 'none';
+        if (show) visible++;
+      });
+
+      // Update live region
+      count.textContent = toArabic(visible) + ' إصدارات';
+
+      // Show/hide empty state
+      empty.classList.toggle('visible', visible === 0);
+    });
+  });
+})();
+</script>
+</body>
+</html>
