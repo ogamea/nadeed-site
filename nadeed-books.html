@@ -188,7 +188,36 @@
   direction: rtl;
 }
 
-/* .footer-min and children — canonical in nadeed-shared.css */
+/* Footer min for inner pages */
+.footer-min {
+  background: var(--noir);
+  padding: 2.5rem 0;
+  border-top: 2px solid var(--rouge);
+}
+.footer-min-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-min .footer-copy {
+  font-family: var(--font-la-body);
+  font-size: 11px;
+  color: var(--ivoire);
+  direction: ltr;
+  opacity: 0.18;
+  letter-spacing: 0.05em;
+}
+.footer-min .footer-legal { display: flex; gap: 1.5rem; direction: ltr; }
+.footer-min .footer-legal a {
+  font-family: var(--font-la-body);
+  font-size: 11px;
+  color: var(--ivoire);
+  opacity: 0.18;
+  transition: opacity 0.2s;
+}
+.footer-min .footer-legal a:hover { opacity: 0.5; }
 
 @media (max-width: 768px) {
   .catalog-grid { grid-template-columns: repeat(2, 1fr); }
@@ -205,7 +234,7 @@
 <nav class="nav" role="navigation" aria-label="القائمة الرئيسية">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="نضيد — الصفحة الرئيسية">
-      <svg width="28" height="28" aria-hidden="true" focusable="false"><use href="nadeed-logo.svg#nadeed-mark-nav"/></svg>
+      <svg width="28" height="32" aria-hidden="true" focusable="false"><use href="nadeed-logo.svg#nadeed-mark-nav"/></svg>
       <div>
         <span class="nav-logo-wordmark">نَضِيد</span>
         <span class="nav-logo-sub">NADEED</span>
@@ -305,7 +334,7 @@
           <p class="book-genre ltr">FICTION · NOVEL</p>
           <h2 class="book-title">أبواب لا تُغلَك</h2>
           <p class="book-author">لمياء المنصور</p>
-          <p class="book-year ltr">2025 · نضيد</p>
+          <p class="book-year ltr"><span data-year></span> · نضيد</p>
         </div>
       </article>
 
@@ -324,7 +353,7 @@
           <p class="book-genre ltr">THOUGHT · ESSAY</p>
           <h2 class="book-title">في جغرافيا الخوف</h2>
           <p class="book-author">طارق البشير</p>
-          <p class="book-year ltr">2025 · نضيد</p>
+          <p class="book-year ltr"><span data-year></span> · نضيد</p>
         </div>
       </article>
 
@@ -343,7 +372,7 @@
           <p class="book-genre ltr">POETRY</p>
           <h2 class="book-title">ديوان الغياب</h2>
           <p class="book-author">سارة الوديان</p>
-          <p class="book-year ltr">2025 · نضيد</p>
+          <p class="book-year ltr"><span data-year></span> · نضيد</p>
         </div>
       </article>
 
@@ -362,7 +391,7 @@
           <p class="book-genre ltr">LITERARY CRITICISM</p>
           <h2 class="book-title">الكتابة كفعل مقاومة</h2>
           <p class="book-author">خالد العزيز</p>
-          <p class="book-year ltr">2025 · نضيد</p>
+          <p class="book-year ltr"><span data-year></span> · نضيد</p>
         </div>
       </article>
 
@@ -381,7 +410,7 @@
           <p class="book-genre ltr">FICTION · NOVEL</p>
           <h2 class="book-title">ما لا تقوله الخرائط</h2>
           <p class="book-author">رامي الجنيدي</p>
-          <p class="book-year ltr">2025 · نضيد</p>
+          <p class="book-year ltr"><span data-year></span> · نضيد</p>
         </div>
       </article>
 
@@ -400,7 +429,7 @@
           <p class="book-genre ltr">AESTHETICS · PHILOSOPHY</p>
           <h2 class="book-title">مقالات في فلسفة الجمال</h2>
           <p class="book-author">د. منى الصالح</p>
-          <p class="book-year ltr">2025 · نضيد</p>
+          <p class="book-year ltr"><span data-year></span> · نضيد</p>
         </div>
       </article>
 
@@ -419,7 +448,7 @@
           <p class="book-genre ltr">POETRY</p>
           <h2 class="book-title">حجر في الماء</h2>
           <p class="book-author">نور الدين العمراني</p>
-          <p class="book-year ltr">2025 · نضيد</p>
+          <p class="book-year ltr"><span data-year></span> · نضيد</p>
         </div>
       </article>
 

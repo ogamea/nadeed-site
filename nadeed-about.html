@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عن نضيد — دار الأدب والفكر والمعرفة | NADEED</title>
+<meta name="description" content="نضيد دار الأدب والفكر والمعرفة — قصتها، رؤيتها، بيانها، وقيمها الخمس. لِلْحَرْفِ قَدَر.">
+<meta name="author" content="نضيد — دار الأدب والفكر والمعرفة">
+<link rel="canonical" href="https://nadeed.pub/about">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"عن نضيد","url":"https://nadeed.pub/about","description":"نضيد دار الأدب والفكر والمعرفة","publisher":{"@type":"Organization","name":"نضيد","alternateName":"NADEED","url":"https://nadeed.pub"}}</script><link rel="stylesheet" href="nadeed-fonts.css">
+<link rel="stylesheet" href="nadeed-shared.css">
+<style>
+.page-header{background:var(--noir);padding:calc(var(--nav-h) + 5rem) 0 5rem;border-bottom:2px solid var(--rouge);position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(237,228,211,.006) 3px,rgba(237,228,211,.006) 4px);pointer-events:none;}
+.page-header::after{content:'عن';font-family:var(--font-ar-display);font-size:280px;font-weight:400;color:var(--ivoire);opacity:.03;position:absolute;left:-.5rem;bottom:-3rem;line-height:1;pointer-events:none;}
+.page-title{font-family:var(--font-ar-display);font-size:clamp(42px,6vw,68px);color:var(--ivoire);direction:rtl;line-height:1.35;margin-bottom:.75rem;position:relative;}
+.page-sub{font-family:var(--font-ar-body);font-size:17px;color:var(--ivoire-fonce);direction:rtl;opacity:.6;max-width:55ch;line-height:1.85;position:relative;}
+
+/* Story section — ivory */
+.story-section{padding:7rem 0;background:var(--ivoire-bg);}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.story-eyebrow{font-family:var(--font-ui);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--rouge);direction:ltr;margin-bottom:1.5rem;}
+.story-heading{font-family:var(--font-ar-display);font-size:clamp(32px,4vw,48px);color:var(--noir-doux);direction:rtl;line-height:1.45;margin-bottom:2rem;}
+.story-body{font-family:var(--font-ar-body);font-size:17px;color:var(--gris-encre);direction:rtl;line-height:2;margin-bottom:1.5rem;}
+
+/* Manifesto — dark full width */
+.manifesto-section{background:var(--noir);padding:8rem 0;position:relative;}
+.manifesto-section::before{content:'';position:absolute;top:0;right:0;left:0;height:2px;background:var(--rouge);}
+.manifesto-section::after{content:'';position:absolute;bottom:0;right:0;left:0;height:2px;background:var(--rouge);}
+.manifesto-inner{max-width:760px;margin:0 auto;padding:0 2rem;text-align:center;}
+.manifesto-label{font-family:var(--font-ui);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--rouge);direction:ltr;margin-bottom:3rem;}
+.manifesto-text{font-family:var(--font-ar-display);font-size:clamp(22px,3vw,34px);color:var(--ivoire);direction:rtl;line-height:1.8;font-weight:400;margin-bottom:1rem;}
+.manifesto-text .hl{color:var(--rouge);}
+.manifesto-rule{width:80px;height:1.5px;background:var(--rouge);margin:2rem auto;}
+
+/* Values — ivory grid */
+.values-section{padding:7rem 0;background:var(--ivoire-card);}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-top:.5px solid var(--ivoire-border);border-left:.5px solid var(--ivoire-border);}
+.value-item{padding:2.5rem 2rem;border-bottom:.5px solid var(--ivoire-border);border-right:.5px solid var(--ivoire-border);position:relative;}
+.value-num{font-family:var(--font-la-display);font-size:64px;font-weight:300;color:var(--ivoire-fonce);line-height:1;opacity:.15;position:absolute;top:1.25rem;right:1.25rem;direction:ltr;}
+.value-name-ar{font-family:var(--font-ar-display);font-size:22px;font-weight:700;color:var(--rouge);direction:rtl;margin-bottom:.3rem;position:relative;}
+.value-name-en{font-family:var(--font-la-body);font-size:12px;color:var(--gris-pale);direction:ltr;font-style:italic;margin-bottom:.85rem;}
+.value-desc{font-family:var(--font-ar-body);font-size:14px;color:var(--gris-encre);direction:rtl;line-height:1.9;}
+
+/* How we read — ivory bg */
+.how-section{padding:7rem 0;background:var(--ivoire-bg);}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.how-item{padding:2rem 0;border-top:.5px solid var(--ivoire-border);}
+.how-number{font-family:var(--font-la-display);font-size:42px;font-weight:300;color:var(--rouge);direction:ltr;line-height:1;margin-bottom:1rem;opacity:.6;}
+.how-title{font-family:var(--font-ar-display);font-size:19px;color:var(--noir-doux);direction:rtl;margin-bottom:.6rem;}
+.how-desc{font-family:var(--font-ar-body);font-size:14px;color:var(--gris-encre);direction:rtl;line-height:1.9;}
+
+/* CTA strip */
+.cta-strip{background:var(--noir-doux);padding:5rem 0;text-align:center;}
+.cta-heading{font-family:var(--font-ar-display);font-size:clamp(28px,4vw,42px);color:var(--ivoire);direction:rtl;margin-bottom:1rem;}
+.cta-sub{font-family:var(--font-ar-body);font-size:16px;color:var(--ivoire-fonce);direction:rtl;opacity:.6;margin-bottom:2rem;}
+
+/* Footer min */
+/* .footer-min / .fm-i / .fc / .fl — canonical in nadeed-shared.css */
+.footer-min-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.fc{font-family:var(--font-la-body);font-size:11px;color:var(--ivoire);direction:ltr;opacity:.18;letter-spacing:.05em;}
+.fl{display:flex;gap:1.5rem;direction:ltr;}
+.fl a{font-family:var(--font-la-body);font-size:11px;color:var(--ivoire);opacity:.18;transition:opacity .2s;}
+.fl a:hover{opacity:.5;}
+
+@media(max-width:900px){
+  .story-grid,.how-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="القائمة الرئيسية">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="نضيد — الصفحة الرئيسية">
+      <svg width="28" height="32" aria-hidden="true" focusable="false"><use href="nadeed-logo.svg#nadeed-mark-nav"/></svg>
+      <div><span class="nav-logo-wordmark">نَضِيد</span><span class="nav-logo-sub">NADEED</span></div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/books" class="nav-link">الإصدارات</a></li>
+      <li><a href="/authors" class="nav-link">المؤلفون</a></li>
+      <li><a href="/articles" class="nav-link">المقالات</a></li>
+      <li><a href="/about" class="nav-link active" aria-current="page">عن نضيد</a></li>
+    </ul>
+    <a href="/submit" class="nav-cta">قدّم مخطوطتك</a>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navDrawer"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-drawer" id="navDrawer" aria-label="القائمة المتنقلة" aria-hidden="true">
+  <a href="/books" class="drawer-link">الإصدارات</a>
+  <a href="/authors" class="drawer-link">المؤلفون</a>
+  <a href="/articles" class="drawer-link">المقالات</a>
+  <a href="/about" class="drawer-link active">عن نضيد</a>
+  <a href="/submit" class="drawer-link cta">قدّم مخطوطتك ←</a>
+  <p class="drawer-contact ltr">nadeed.pub@outlook.com</p>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <h1 class="page-title">عن نضيد</h1>
+    <p class="page-sub">دار الأدب والفكر والمعرفة — قصتنا، رؤيتنا، وما يجعلنا مختلفين</p>
+  </div>
+</header>
+
+<main>
+<!-- Story -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div data-reveal>
+        <p class="story-eyebrow ltr">Our Story · قصتنا</p>
+        <h2 class="story-heading">دار تُؤمن بأن<br>النشر فعلٌ حضاري</h2>
+        <p class="story-body">وُلدت نضيد من سؤال بسيط وثقيل في آن: لماذا يستحق الكتاب أن يُنشر؟ ليس لأنه سيُباع. ليس لأن كاتبه مشهور. ليس لأن موضوعه رائج. بل لأنه يقول شيئًا يستحق أن يُقال، بطريقة لا يمكن لأحد آخر أن يقولها.</p>
+        <p class="story-body">في عالم يتضاعف فيه عدد الكتب كل عام، ويتناقص فيه عمقها — اخترنا الاتجاه المعاكس. اخترنا الأقل والأعمق والأبقى. اخترنا الكتاب الذي يُقرأ ويُعاد قراؤه، لا الكتاب الذي يُشترى ويُنسى.</p>
+        <p class="story-body">نضيد ليست منصة. هي موقف. موقف من اللغة العربية التي تستحق ما هو أحسن مما قُدِّم لها، ومن القارئ الذي يستحق الاحترام الكامل.</p>
+      </div>
+      <div data-reveal>
+        <p class="story-eyebrow ltr">Our Vision · رؤيتنا</p>
+        <h2 class="story-heading" style="font-size:clamp(26px,3vw,36px);">أن نكون الأعمق أثرًا<br>لا الأكثر انتشارًا</h2>
+        <p class="story-body">نضيد لا تريد أن تكون الأكبر. تريد أن تكون الأعرق — بالمعنى الذي تعني فيه العراقة صدق الأثر لا طول العمر. دار الأدب والفكر والمعرفة التي تفخر بكل كتاب يحمل اسمها.</p>
+        <p class="story-body">نبني مكتبة عربية رقمية يفخر الكاتب بالانتساب إليها والقارئ بالاقتناء منها. مكتبة لا تعتذر عن رقيّها، ولا تتصنّع وصولًا لم تسعَ إليه.</p>
+        <div style="border-right:2px solid var(--rouge);padding-right:1.5rem;margin-top:2rem;">
+          <p style="font-family:var(--font-ar-display);font-size:19px;color:var(--gris-encre);direction:rtl;line-height:1.85;font-style:italic;">
+            مرجعٌ ثقافي يُوثَق به،<br>
+            ومنصةٌ يعتز الكاتب بالانتساب إليها،<br>
+            ونافذةٌ تُضيء أعمق ما أنتجه الفكر العربي.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Manifesto — dark -->
+<section class="manifesto-section" aria-labelledby="manifesto-heading">
+  <div class="manifesto-inner">
+    <p class="manifesto-label ltr" id="manifesto-heading">The Manifesto · البيان</p>
+    <div class="manifesto-text" data-reveal>
+      نرفض الكتاب الذي يُنشر لأنه سيُباع.<br>
+      ونرفض القارئ الذي يُكتب له لأنه موجود.<br>
+      نكتب للذي يستحق أن يُكتب له —<br>
+      القارئ الذي يأتي إلى الصفحة طالبًا لا هاربًا.<br>
+      <span class="hl">نُنضِّد ما يبقى.</span>
+    </div>
+    <div class="manifesto-rule"></div>
+    <p style="font-family:var(--font-la-display);font-size:15px;color:var(--ivoire-fonce);direction:ltr;font-style:italic;opacity:.55;">
+      We refuse the book published because it will sell.<br>
+      We write for those worthy of being written for —<br>
+      the reader who comes to the page seeking, not escaping.
+    </p>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="values-section" aria-labelledby="values-heading">
+  <div class="container">
+    <p class="section-label" id="values-heading">القيم الخمس · Five Pillars</p>
+    <div class="values-grid">
+      <div class="value-item" data-reveal>
+        <span class="value-num ltr">I</span>
+        <h3 class="value-name-ar">الرقيّ</h3>
+        <p class="value-name-en ltr">Eminence</p>
+        <p class="value-desc">لا نقيس النجاح بعدد المبيعات، بل بعمق الأثر. كل إصدار يحمل اسم نضيد هو وعدٌ بجودة لا تساوم.</p>
+      </div>
+      <div class="value-item" data-reveal>
+        <span class="value-num ltr">II</span>
+        <h3 class="value-name-ar">الأصالة</h3>
+        <p class="value-name-en ltr">Authenticity</p>
+        <p class="value-desc">صوت الكاتب مقدّس عندنا. دورنا أن نحرره من الشوائب لا أن نُحلّه محلّ صوتنا.</p>
+      </div>
+      <div class="value-item" data-reveal>
+        <span class="value-num ltr">III</span>
+        <h3 class="value-name-ar">الصرامة</h3>
+        <p class="value-name-en ltr">Rigor</p>
+        <p class="value-desc">التحرير عندنا ليس تصحيحًا لغويًا. هو حوار عميق مع النص يستمر حتى يبلغ أقصى طاقته.</p>
+      </div>
+      <div class="value-item" data-reveal>
+        <span class="value-num ltr">IV</span>
+        <h3 class="value-name-ar">الجمال</h3>
+        <p class="value-name-en ltr">Beauty</p>
+        <p class="value-desc">الجمال ليس زينة نُضيفها. هو في الحرف المختار، والسطر المُتنفَّس فيه، والصمت بين الكلمات.</p>
+      </div>
+      <div class="value-item" data-reveal>
+        <span class="value-num ltr">V</span>
+        <h3 class="value-name-ar">الوفاء</h3>
+        <p class="value-name-en ltr">Fidelity</p>
+        <p class="value-desc">وفاء للكاتب الذي يثق بنا، وللقارئ الذي يدفع ثمن وقته لا ثمن ورق فقط، وللعربية التي تستحق أحسن ما فينا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How we read -->
+<section class="how-section" aria-labelledby="how-heading">
+  <div class="container">
+    <p class="section-label" id="how-heading">كيف نقرأ · How We Read</p>
+    <div class="how-grid">
+      <div>
+        <div class="how-item" data-reveal>
+          <div class="how-number ltr">01</div>
+          <h3 class="how-title">نقرأ كل شيء</h3>
+          <p class="how-desc">كل مخطوطة تصلنا تمر بقراءة أولية كاملة من فريق التحرير. لا نستخدم بوتات أو فلاتر آلية.</p>
+        </div>
+        <div class="how-item" data-reveal>
+          <div class="how-number ltr">02</div>
+          <h3 class="how-title">نسأل السؤال الواحد</h3>
+          <p class="how-desc">لماذا هذا النص الآن، ولماذا بهذه الطريقة، ولماذا لا يمكن لأحد آخر أن يكتبه؟ إذا لم يكن الجواب واضحًا — ننتقل.</p>
+        </div>
+        <div class="how-item" data-reveal>
+          <div class="how-number ltr">03</div>
+          <h3 class="how-title">نردّ بصدق</h3>
+          <p class="how-desc">نتواصل مع الأعمال التي تصل إلى مرحلة القراءة المعمّقة. الرفض بصمت ليس أدبًا — لكن القراءة المعمّقة تستغرق وقتًا.</p>
+        </div>
+      </div>
+      <div>
+        <div class="how-item" data-reveal>
+          <div class="how-number ltr">04</div>
+          <h3 class="how-title">نعمل مع الكاتب</h3>
+          <p class="how-desc">العمل المقبول ليس نهاية الرحلة. هو بداية حوار تحريري يحترم الصوت ويطوّره لا يستبدله.</p>
+        </div>
+        <div class="how-item" data-reveal>
+          <div class="how-number ltr">05</div>
+          <h3 class="how-title">ننشر بعناية كاملة</h3>
+          <p class="how-desc">التصميم، اختيار الخط، التدقيق، الوصف، صفحة الكتاب — كل شيء يستحق من العناية ما يستحقه النص نفسه.</p>
+        </div>
+        <div class="how-item" data-reveal>
+          <div class="how-number ltr">06</div>
+          <h3 class="how-title">نبقى بجانب الكتاب</h3>
+          <p class="how-desc">إصداراتنا ليست رقمًا في قائمة. نضيد تقف خلف كل كتاب تُصدره على المدى الطويل، لا في أسبوع الإطلاق فقط.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container">
+    <h2 class="cta-heading">هل أنت مؤلف يبحث عن دار تستحقه؟</h2>
+    <p class="cta-sub">قرأت ما نؤمن به. إذا كنت تؤمن بالشيء ذاته — نريد قراءة عملك.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/submit" class="btn-rouge">قدّم مخطوطتك ←</a>
+      <a href="/contact" class="btn-ghost-dark">تواصل معنا</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer-min" role="contentinfo">
+  <div class="container">
+    <div class="footer-min-inner">
+      <p class="fc ltr">© <span data-year></span> نضيد — دار الأدب والفكر والمعرفة</p>
+      <nav class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="nadeed-shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المقالات — نضيد | NADEED</title>
+<meta name="description" content="مقالات نضيد في الأدب والفكر والنقد والمعرفة — كتابات عميقة تحترم ذكاء القارئ.">
+<link rel="canonical" href="https://nadeed.pub/articles"><link rel="stylesheet" href="nadeed-fonts.css">
+<link rel="stylesheet" href="nadeed-shared.css">
+<style>
+.page-header{background:var(--noir);padding:calc(var(--nav-h)+4rem) 0 4rem;border-bottom:2px solid var(--rouge);}
+.page-title{font-family:var(--font-ar-display);font-size:clamp(38px,6vw,64px);color:var(--ivoire);direction:rtl;line-height:1.35;margin-bottom:.6rem;}
+.page-sub{font-family:var(--font-ar-body);font-size:16px;color:var(--ivoire-fonce);direction:rtl;opacity:.55;}
+
+.filter-bar{background:var(--ivoire-card);border-bottom:.5px solid var(--ivoire-border);padding:.85rem 0;position:sticky;top:var(--nav-h);z-index:50;}
+.filter-inner{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;}
+.filter-btn{font-family:var(--font-ui);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris-pale);padding:.45rem 1rem;border:.5px solid var(--ivoire-border);background:none;cursor:pointer;transition:all .2s;direction:ltr;white-space:nowrap;}
+.filter-btn:hover{color:var(--gris-encre);border-color:var(--gris-pale);}
+.filter-btn.active,.filter-btn[aria-pressed="true"]{color:var(--ivoire);background:var(--rouge);border-color:var(--rouge);}
+
+.articles-main{background:var(--ivoire-bg);padding:0 0 7rem;}
+
+/* Featured large article */
+.featured-article{padding:5rem 0 0;}
+.featured-inner{display:grid;grid-template-columns:1.5fr 1fr;gap:1px;background:var(--ivoire-border);}
+.feat-main{background:var(--ivoire-bg);padding:3.5rem;display:flex;flex-direction:column;gap:1.25rem;}
+.feat-aside{background:var(--ivoire-card);display:flex;flex-direction:column;}
+.feat-aside-item{padding:2rem 2.25rem;border-bottom:.5px solid var(--ivoire-border);display:flex;flex-direction:column;gap:.4rem;flex:1;}
+.feat-aside-item:last-child{border-bottom:none;}
+
+.article-cat{font-family:var(--font-ui);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--rouge);direction:ltr;}
+.article-title-xl{font-family:var(--font-ar-display);font-size:clamp(24px,3.5vw,38px);color:var(--noir-doux);direction:rtl;line-height:1.45;}
+.article-title-md{font-family:var(--font-ar-display);font-size:19px;color:var(--noir-doux);direction:rtl;line-height:1.5;}
+.article-title-sm{font-family:var(--font-ar-display);font-size:16px;color:var(--noir-doux);direction:rtl;line-height:1.55;}
+.article-excerpt{font-family:var(--font-ar-body);font-size:15px;color:var(--gris-encre);direction:rtl;line-height:1.9;opacity:.8;max-width:58ch;}
+.article-meta{font-family:var(--font-ui);font-size:11px;color:var(--gris-pale);direction:ltr;display:flex;gap:.75rem;align-items:center;margin-top:auto;padding-top:.75rem;}
+.meta-dot{width:3px;height:3px;background:var(--rouge);border-radius:50%;flex-shrink:0;}
+.article-author{font-family:var(--font-ar-body);font-size:12px;color:var(--gris-pale);direction:rtl;}
+
+/* Article grid */
+.articles-grid-wrap{margin-top:1px;}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ivoire-border);}
+.article-card{background:var(--ivoire-bg);padding:2rem;display:flex;flex-direction:column;gap:.7rem;transition:background .2s;}
+.article-card:hover{background:var(--ivoire-card);}
+.article-card.wide{grid-column:span 2;}
+
+/* Load more */
+.load-more-row{text-align:center;padding:4rem 0 0;}
+
+/* footer min */
+/* .footer-min / .fm-i / .fc / .fl — canonical in nadeed-shared.css */
+.fm-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.fc{font-family:var(--font-la-body);font-size:11px;color:var(--ivoire);direction:ltr;opacity:.18;letter-spacing:.05em;}
+.fl{display:flex;gap:1.5rem;direction:ltr;}
+.fl a{font-family:var(--font-la-body);font-size:11px;color:var(--ivoire);opacity:.18;transition:opacity .2s;}
+.fl a:hover{opacity:.5;}
+@media(max-width:900px){
+  .featured-inner{grid-template-columns:1fr;}
+  .articles-grid{grid-template-columns:1fr 1fr;}
+  .article-card.wide{grid-column:span 1;}
+  .nav-links{display:none;}
+}
+@media(max-width:600px){.articles-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="القائمة الرئيسية">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="نضيد">
+      <svg width="28" height="32" aria-hidden="true" focusable="false"><use href="nadeed-logo.svg#nadeed-mark-nav"/></svg>
+      <div><span class="nav-logo-wordmark">نَضِيد</span><span class="nav-logo-sub">NADEED</span></div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/books" class="nav-link">الإصدارات</a></li>
+      <li><a href="/authors" class="nav-link">المؤلفون</a></li>
+      <li><a href="/articles" class="nav-link active" aria-current="page">المقالات</a></li>
+      <li><a href="/about" class="nav-link">عن نضيد</a></li>
+    </ul>
+    <a href="/submit" class="nav-cta">قدّم مخطوطتك</a>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navDrawer"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-drawer" id="navDrawer" aria-label="القائمة المتنقلة" aria-hidden="true">
+  <a href="/books" class="drawer-link">الإصدارات</a>
+  <a href="/authors" class="drawer-link">المؤلفون</a>
+  <a href="/articles" class="drawer-link active">المقالات</a>
+  <a href="/about" class="drawer-link">عن نضيد</a>
+  <a href="/submit" class="drawer-link cta">قدّم مخطوطتك ←</a>
+  <p class="drawer-contact ltr">nadeed.pub@outlook.com</p>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <h1 class="page-title">المقالات</h1>
+    <p class="page-sub">كتابات عميقة في الأدب والفكر والنقد والمعرفة — تحترم ذكاء قارئها</p>
+  </div>
+</header>
+
+<div class="filter-bar" role="navigation" aria-label="تصفية المقالات">
+  <div class="container">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-cat="all" aria-pressed="true" type="button">الكل</button>
+      <button class="filter-btn" data-cat="literature" aria-pressed="false" type="button">أدب</button>
+      <button class="filter-btn" data-cat="thought" aria-pressed="false" type="button">فكر</button>
+      <button class="filter-btn" data-cat="criticism" aria-pressed="false" type="button">نقد</button>
+      <button class="filter-btn" data-cat="knowledge" aria-pressed="false" type="button">معرفة</button>
+      <button class="filter-btn" data-cat="publishing" aria-pressed="false" type="button">نشر</button>
+    </div>
+  </div>
+</div>
+
+<main class="articles-main">
+  <div class="container">
+
+    <!-- Featured -->
+    <div class="featured-article" data-reveal>
+      <div class="featured-inner">
+        <article class="feat-main" data-cat="criticism">
+          <p class="article-cat ltr">LITERARY CRITICISM · نقد أدبي</p>
+          <h2 class="article-title-xl">
+            <a href="/articles/riwaya-arabiyya-makaan" style="color:inherit;text-decoration:none;">الرواية العربية وأزمة المكان: حين يتحوّل الفضاء إلى سجن بلا جدران</a>
+          </h2>
+          <p class="article-excerpt">في السنوات الأخيرة، نلاحظ في الرواية العربية الجديدة ظاهرةً تستحق التأمل: انكماش المكان إلى حدّه الأدنى. لا لأن الروائي يفتقر إلى الخيال، بل لأن العالم نفسه — على ما يبدو — بات يضيق. ولأن ضيق المكان في الرواية ليس تقنية فحسب، بل هو ترجمة بصرية لشيء يحدث في داخل الشخصية، في البنية الاجتماعية، وفي الوعي السردي العربي المعاصر.</p>
+          <div class="article-meta ltr">
+            <span>خالد العزيز</span>
+            <span class="meta-dot"></span>
+            <span>١٥ دقيقة</span>
+            <span class="meta-dot"></span>
+            <span>نقد أدبي</span>
+          </div>
+        </article>
+        <div class="feat-aside">
+          <article class="feat-aside-item" data-cat="thought">
+            <p class="article-cat ltr">THOUGHT</p>
+            <h3 class="article-title-md">هل ما زال الفلاسفة يقرأون؟</h3>
+            <p class="article-author">د. منى الصالح · ١٢ دقيقة</p>
+          </article>
+          <article class="feat-aside-item" data-cat="literature">
+            <p class="article-cat ltr">POETRY &amp; POETICS</p>
+            <h3 class="article-title-md">الشعر في زمن الخوارزميات</h3>
+            <p class="article-author">سارة الوديان · ٨ دقائق</p>
+          </article>
+          <article class="feat-aside-item" data-cat="publishing">
+            <p class="article-cat ltr">PUBLISHING</p>
+            <h3 class="article-title-md">ما الذي يعنيه أن تنشر بالعربية اليوم؟</h3>
+            <p class="article-author">طارق البشير · ١٠ دقائق</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="articles-grid-wrap">
+      <div class="articles-grid" id="articlesGrid">
+        <article class="article-card wide" data-cat="knowledge" data-reveal>
+          <p class="article-cat ltr">KNOWLEDGE</p>
+          <h3 class="article-title-md">القراءة بوصفها فعلاً سياسيًا: تأملات في علاقة الكتاب بالسلطة</h3>
+          <p class="article-excerpt" style="font-size:14px;">من المفارقات المثيرة أن الأنظمة التي تخشى الكتب تُمنح بذلك شهادةً على قدرته — فالخوف من الكلمة اعتراف ضمني بسلطتها.</p>
+          <div class="article-meta ltr"><span>لمياء المنصور</span><span class="meta-dot"></span><span>١٨ دقيقة</span></div>
+        </article>
+        <article class="article-card" data-cat="criticism" data-reveal>
+          <p class="article-cat ltr">CRITICISM</p>
+          <h3 class="article-title-sm">في نقد النقد: من يحرس الحراس؟</h3>
+          <p class="article-author">خالد العزيز · ١١ دقيقة</p>
+        </article>
+        <article class="article-card" data-cat="thought" data-reveal>
+          <p class="article-cat ltr">THOUGHT</p>
+          <h3 class="article-title-sm">الكاتب والمدينة: علاقة توتر أبدي</h3>
+          <p class="article-author">طارق البشير · ٩ دقائق</p>
+        </article>
+        <article class="article-card" data-cat="literature" data-reveal>
+          <p class="article-cat ltr">LITERATURE</p>
+          <h3 class="article-title-sm">القصة القصيرة: ما تستطيعه الرواية لا تستطيعه</h3>
+          <p class="article-author">سارة الوديان · ٧ دقائق</p>
+        </article>
+        <article class="article-card" data-cat="publishing" data-reveal>
+          <p class="article-cat ltr">PUBLISHING</p>
+          <h3 class="article-title-sm">الكتاب الإلكتروني لم يقتل الكتاب الورقي: قراءة في وهم الثنائية</h3>
+          <p class="article-author">طارق البشير · ١٣ دقيقة</p>
+        </article>
+        <article class="article-card" data-cat="knowledge" data-reveal>
+          <p class="article-cat ltr">KNOWLEDGE</p>
+          <h3 class="article-title-sm">اللغة العربية والذكاء الاصطناعي: سؤال الهوية أمام الآلة</h3>
+          <p class="article-author">د. منى الصالح · ١٦ دقيقة</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="load-more-row">
+      <p style="font-family:var(--font-ar-body);font-size:14px;color:var(--gris-pale);direction:rtl;">يتوسّع أرشيف المقالات بإضافات منتظمة</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer-min" role="contentinfo">
+  <div class="container">
+    <div class="fm-inner">
+      <p class="fc ltr">© <span data-year></span> نضيد — دار الأدب والفكر والمعرفة</p>
+      <nav class="fl"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="nadeed-shared.js"></script>
+<script>
+(function(){
+  const btns     = document.querySelectorAll('.filter-btn');
+  const featWrap = document.querySelector('.featured-article');
+  const featMain = document.querySelector('.feat-main');
+  const featItems= document.querySelectorAll('.feat-aside-item');
+  const gridCards= document.querySelectorAll('.articles-grid .article-card');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed','true');
+      const cat = btn.dataset.cat;
+
+      // Featured main article
+      if (featMain) {
+        const show = cat === 'all' || featMain.dataset.cat === cat;
+        featMain.style.display = show ? 'flex' : 'none';
+      }
+
+      // Featured aside items
+      let asideVisible = 0;
+      featItems.forEach(a => {
+        const show = cat === 'all' || a.dataset.cat === cat;
+        a.style.display = show ? 'flex' : 'none';
+        if (show) asideVisible++;
+      });
+
+      // Hide entire featured section if nothing inside matches
+      if (featWrap) {
+        const mainVisible = !featMain || featMain.style.display !== 'none';
+        featWrap.style.display = (mainVisible || asideVisible > 0) ? '' : 'none';
+      }
+
+      // Grid cards
+      gridCards.forEach(card => {
+        const show = cat === 'all' || card.dataset.cat === cat;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
